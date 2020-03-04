@@ -1,0 +1,634 @@
+
+<!-- Welcome to some sample code to control your Firebase Database -->
+<!-- HERE IS YOUR HTML TO SET UP YOUR PAGE -->
+<html>
+    <head>
+
+        <title>Calendar</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <!-- HERE ARE YOUR FIREBASE and GOOGLE AUTHENICATION IMPORTS -->
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-database.js"></script>
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+        <!-- Add SDKs for Firebase products that you want to use 
+          https://firebase.google.com/docs/web/setup#available-libraries -->
+ 
+    </head>
+
+    <body >
+
+      
+
+      <style>
+body {
+  background-color: white;
+}
+</style>
+
+
+<!-- Adding settings and account button for personilization of the user -->
+
+<div class="w3-row">
+
+
+
+    
+  </div>
+</div>
+
+
+</body>
+</html>
+</body>
+</html>
+
+<div class="w3-bar w3-light-blue">
+  <a href="#" class="w3-bar-item w3-button">Home</a>
+  <a href="#" class="w3-bar-item w3-button">Account</a>
+  <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank">Gmail</a>
+  <a href="https://www.uber.com/ca/en/" target="_blank">Uber</a>
+  <a href="#" class="w3-bar-item w3-button">Settings</a>
+  <a href="test.html">Add Event</a>
+  
+  <a href="#">
+    <div class="w3-dropdown-hover">
+      <button class="w3-button">View</button>
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="#" class="w3-bar-item w3-button">Daily</a>
+        <a href="#" class="w3-bar-item w3-button">Weekly</a>
+        <a href="#" class="w3-bar-item w3-button">Monthly</a>
+        <a href="#" class="w3-bar-item w3-button">Yearly</a>
+      </div>
+    </a>
+
+  </a>
+    </div>
+    
+
+<body>
+
+</body>
+
+<!-
+
+<html>
+<head>
+
+</head>
+</html>
+
+  <div class="w3-cell-row">
+
+    <div class="w3-container w3-light-blue w3-cell">
+      <a href="index11.html">January</a>
+    </div>
+
+    <div class="w3-container w3-light-blue w3-cell">
+      <a href="february.html">February</a>
+    </div>
+
+    <div class="w3-container w3-light-blue w3-cell">
+      <a href="march.html">March</a>
+    </div>
+  
+    <div class="w3-container w3-light-blue w3-cell">
+      <a href="april.html">April</a>
+    </div>
+  
+    <div class="w3-container w3-light-blue w3-cell">
+      <a href="may.html">May</a>
+    </div>
+ 
+    <div class="w3-container w3-light-blue w3-cell">
+      <a href="june.html">June</a>
+    </div>
+  
+    <div class="w3-container w3-light-blue w3-cell">
+      <a href="july.html">July</a>
+    </div>
+  
+    <div class="w3-container w3-light-blue w3-cell">
+      <a href="august.html">August</a>
+    </div>
+  
+    <div class="w3-container w3-light-blue w3-cell">
+      <a href="september.html">September</a>
+    </div>
+ 
+    <div class="w3-container w3-light-blue w3-cell">
+      <a href="october.html">October</a>
+    </div>
+
+    <div class="w3-container w3-light-blue w3-cell">
+      <a href="november.html">November</a>
+    </div>
+
+    <div class="w3-container w3-light-blue w3-cell">
+      <a href="december.html">December</a>
+    </div>
+</div>
+
+<!-- This is a calendar layout that will display all the days in the month provided -->
+
+<style>
+* {box-sizing: border-box;}
+ul {list-style-type: none;}
+body {font-family: Verdana, sans-serif;}
+
+.month {
+  padding: 70px 25px;
+  width: 100%;
+  background: #ffffff;
+  text-align: center;
+}
+
+.month ul {
+  margin: 0;
+  padding: 0;
+}
+
+.month ul li {
+  color: #8cbed6;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.month .prev {
+  float: left;
+  padding-top: 10px;
+}
+
+.month .next {
+  float: right;
+  padding-top: 10px;
+}
+
+.weekdays {
+  margin: 0;
+  padding: 10px 0;
+  background-color: #8cbed6;
+}
+
+.weekdays li {
+  display: inline-block;
+  width: 13.6%;
+  color: #111;
+  text-align: center;
+}
+
+.days {
+  padding: 10px 0;
+  background: #bbb;
+  margin: 0;
+}
+
+.days li {
+  list-style-type: none;
+  display: inline-block;
+  width: 13.6%;
+  text-align: center;
+  margin-bottom: 5px;
+  font-size:12px;
+  color: #111;
+}
+
+
+.days li .active {.
+  padding: 5px;
+  background: #1abc9c;
+  color: white !important
+}
+
+/* Add media queries for smaller screens */
+@media screen and (max-width:720px) {
+  .weekdays li, .days li {width: 13.1%;}
+}
+
+@media screen and (max-width: 420px) {
+  .weekdays li, .days li {width: 12.5%;}
+  .days li .active {padding: 2px;}
+}
+
+@media screen and (max-width: 290px) {
+  .weekdays li, .days li {width: 12.2%;}
+}
+
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #8cbed6;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #ffffff;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #ffffff;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+
+
+</style>
+</head>
+<body>
+
+
+<div class="month">      
+  <ul>
+    <li class="prev">&#10094;</li>
+    <li class="next">&#10095;</li>
+    <li>
+      February<br>
+      <span style="font-size:18px">2020</span>
+    </li>
+  </ul>
+</div>
+
+
+<ul class="weekdays">
+  <li>Monday</li>
+  <li>Tuesday</li>
+  <li>Wesnday</li>
+  <li>Thursday</li>
+  <li>Friday</li>
+  <li>Saturday</li>
+  <li>Sunday</li>
+</ul>
+
+<ul class="days">  
+  <li>1</li>
+  <li>2</li>
+  <li>3</li>
+  <li>4</li>
+  <li>5</li>
+  <li>6</li>
+  <li>7</li>
+  <li>8</li>
+  <li>9</li>
+  <li>10</li>
+  <li>11</li>
+  <li>12</li>
+  <li>13</li>
+  <li>14</li>
+  <li>15</li>
+  <li>16</li>
+  <li>17</li>
+  <li>18</li>
+  <li>19</li>
+  <li>20</li>
+  <li>21</li>
+  <li>22</li>
+  <li>23</li>
+  <li>24</li>
+  <li>25</li>
+  <li>26</li>
+  <li>27</li>
+  <li>28</li>
+  <li>29</li>
+  <li>30</li>
+  <li>31</li>
+</ul>
+
+<!--
+
+</body>
+</html>
+
+
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+</style>
+</head>
+<body>
+
+<h2>Account</h2>
+
+<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="img_avatar2.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+      <button type="submit">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+            <h1 id="uid"></h1>
+            
+            <!- HERE IS YOUR HTML CODE TO SET TEXT 
+            <h3>A demonstration of how to "set" and "get" information in the database</h3>
+
+            <button onclick = "signin()" >Sign In</button>
+           
+            <input type="text" id="address" value="Enter Address">
+            <input type="text" id="time" value="Enter Time">
+            <input type="text" id="uber" value="Enter Uber">
+
+            <button onclick = "setData()" >Set Data</button>
+            <button onclick = "getData()" >Get data</button>
+
+            <p>Potential Events:</p>
+
+            <!- ol means ordered list --
+            <p><ol id="addressList"></ol><ol id="timeList"></ol><ol id="uberList"></ol></p>    
+                 
+    </body>
+    
+    <!- HERE IS THE JAVASCRIPT TO CONNECT TO YOUR FIREBASE --
+    <script>
+
+        // Variables created here to be used throughout the program
+
+        var provider = new firebase.auth.GoogleAuthProvider();
+        var userId = document.getElementById("uid").innerHTML;
+        
+        // Your web app's Firebase configuration that we copy-and-paste from 
+        // the Firebase setup
+        var config = {
+
+          apiKey: "AIzaSyCbLhUS1KKeVi1NCrjzDjTdOktmL6z0CIk",
+          authDomain: "ucc2019-patty.firebaseapp.com",
+          databaseURL: "https://ucc2019-patty.firebaseio.com",
+          projectId: "ucc2019-patty",
+          storageBucket: "ucc2019-patty.appspot.com",
+          messagingSenderId: "1027119486053",
+          appId: "1:1027119486053:web:f6697282b752d8b539e28c",
+          measurementId: "G-70XF380WKG"
+
+          };
+
+        firebase.initializeApp(config);
+        //firebase.analytics();
+
+        // Authentication Check: to see if you are logged in
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user == null) {
+                document.getElementById("uid").innerHTML = "not logged in";
+                return;
+            } else {
+                userId = user.uid; // you can also get .displayName, .photoURL, .email
+                document.getElementById("uid").innerHTML = userId; // display Google uid on page
+                
+            } // end user null check
+        }); // end check auth state
+
+
+        // Functions that will be used to "get" and "set" data, among other "helper"
+        // functions too...
+
+        function signin() {
+            var provider = new firebase.auth.GoogleAuthProvider();
+            firebase.auth().signInWithRedirect(provider).then(function(result) { 
+                window.location.replace("fbtest.html");
+            });
+        } // end signin 
+
+        function setData() {
+
+            // Create a database object that we can refer to
+            var database = firebase.database();
+
+            // Create a reference to a particular location or "node" called StudentInfo
+            var ref = database.ref('StudentInfo');
+
+            // Grab the Name, Subject, and Grade obtained from the HTML frontend textboxes
+            var saddress = document.getElementById("Address").value;
+            var stime = document.getElementById("Time").value;
+            var suber = document.getElementById("Uber").value;
+            
+            // Create a JSON object to add to the database with user-inputted data
+            var data = {
+                address: saddress,
+                time: stime,
+                uber: suber
+            }
+            // "PUSH" means we add something to the database
+            ref.push(data);
+        } // end setdata
+
+        function getData() {
+
+            // Create a database object that we can refer to
+            var database = firebase.database();
+
+            // Create a reference to a particular location or "node"
+            // 'StudentInfo'is the name of the main branch in the database
+            var ref = database.ref('StudentInfo');
+
+            // we will make reference to each 'value' of a database object which will have 
+            // two helper functions latched "on" to it to perform additional tasks 
+            // - either we have access to data values, or we don't and there is an error
+
+            ref.on('value', gotData, errData) 
+            // jump to the helper function...think of 'value' as the parameter that is passed
+
+        } // end getdata
+
+        function gotData(data){
+
+            // clear items from previously created lists
+            document.getElementById("addressList").innerHTML = "";
+            document.getElementById("timeList").innerHTML = "";
+            document.getElementById("uberList").innerHTML = "";
+            
+            // collect all of the unique objects ('keys' or id's) out of the database
+            var studentData = data.val(); // access the data 'value' of each student 'object' 
+            var keys = Object.keys(studentData);
+            console.log(keys);
+
+            // iterate through the unique object id's and grab data fields: 'name', 'subject', 'mark'
+            for (var i = 0; i < keys.length; i++){
+              var k = keys[i];
+              var adress = studentData[k].address;
+              var time = studentData[k].time;
+              var uber = studentData[k].uber;
+
+              // DISPLAY STUDENT NAMES
+              // Create a reference to the ordered list called 'studentList'
+              // called 'oListStudent'
+              var oListAddress = document.getElementById('adressList');
+              var entry = document.createElement('li'); // a list element to be added to the ordered list
+              entry.appendChild(document.createTextNode(address));
+              oListAddress.appendChild(entry);
+
+              // DISPLAY STUDENT SUBJECTS
+              // Create a reference to the ordered list called 'studentList'
+              // called 'oListStudent'
+              var oListTime = document.getElementById('timeList');
+              var entry = document.createElement('li'); // a list element to be added to the ordered list
+              entry.appendChild(document.createTextNode(time));
+              oListTime.appendChild(entry);
+
+              // DISPLAY STUDENT MARKS
+              // Create a reference to the ordered list called 'markList'
+              // called 'oListMark'
+              var oListUber = document.getElementById('uberList');
+              var entry = document.createElement('li'); // a list element to be added to the ordered list
+              entry.appendChild(document.createTextNode(uber));
+              oListUber.appendChild(entry);
+              
+              // AJ: we only need to send information to the console window when we
+              // are debugging our code of errors
+              // console.log (keys[i]);
+              // console.log (subject);
+
+            }
+        }
+
+        function errData(err){
+            console.log('Error!')
+            console.log(err)
+        }
+
+    </script>
+</html>
+
+--!>
